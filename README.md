@@ -9,6 +9,7 @@ See repo at: https://github.com/mrkbutty/freezetest
 
 No problem running direct from dist:
 
+```
 >dist\freezetest.exe
 Hello, from main file: freezetest.py
 I think progdir is C:\Code\freezetest\dist
@@ -16,10 +17,12 @@ I think path is ['C:\\Code\\freezetest\\dist', 'C:\\Code\\freezetest\\dist\\lib\
 Hello, from subfunc file: C:\Code\freezetest\dist\tools\submod.py
 I think progdir is C:\Code\freezetest\dist
 I think path is ['C:\\Code\\freezetest\\dist', 'C:\\Code\\freezetest\\dist\\lib\\library.zip', 'C:\\Code\\freezetest\\dist\\lib']
+```
 
 
 Issue when running after dist moved C:\tmp\dist and C:\tmp\dist is added into windows PATH and I run from working directory C:\:
 
+```
 >freezetest
 Hello, from main file: freezetest.py
 I think progdir is c:\tmp\dist
@@ -38,7 +41,7 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
 ModuleNotFoundError: No module named 'tools.submod'
 Steps to reproduce the behavior
-
+```
 
 **Expected behavior**
 I did not expect the sys.path to change depending on how the exe was executed.
